@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: case-study
+  namespace: case-study
+  labels:
+    app: case-study
+spec:
+  selector:
+    app: case-study
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+  type: ClusterIP
+

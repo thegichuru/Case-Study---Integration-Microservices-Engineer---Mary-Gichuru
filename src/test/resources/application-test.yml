@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:case_study;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  jackson:
+    default-property-inclusion: non_null
+
+soap:
+  country-info:
+    base-url: http://localhost/soap
+    connection-timeout: 1s
+    read-timeout: 1s
+
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+

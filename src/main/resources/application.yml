@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: case_study
+  datasource:
+#    url: ${DB_URL}
+#    username: ${DB_USERNAME}
+#    password: ${DB_PASSWORD}
+
+    url: jdbc:mysql://localhost:3306/country_origin
+    username: root
+    password: Wanja4321#
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    default-property-inclusion: non_null
+
+soap:
+  country-info:
+    base-url: ${COUNTRY_INFO_SOAP_BASE_URL:http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso}
+    connection-timeout: 3s
+    read-timeout: 5s
+
+server:
+  port: 8080
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+
+logging:
+  level:
+    ncba.case_study: INFO
