@@ -5,7 +5,5 @@ metadata:
   namespace: case-study
 data:
   SPRING_PROFILES_ACTIVE: "k8s"
-  DB_URL: "jdbc:mysql://mysql:3306/country_origin?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"
-  JPA_DDL_AUTO: "update"
   COUNTRY_INFO_SOAP_BASE_URL: "http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso"
 
